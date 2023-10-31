@@ -6,15 +6,22 @@ import streamlit as st
 
 
 st.title("Vizuara AI Labs")
-st.title("Handwritten Text Classification")
+st.title("Handwritten Text Classification : Numbers")
 st.image("image.jpg")
-st.write('''Handwriting detection is like a special superpower that helps computers read and understand the words we write with our hands!''')
+st.write('''Handwriting detection is like a special superpower that helps computers read and understand what we write with our hands!''')
 
-st.write('''It's like teaching a computer to recognize your writing, just like your teacher can! We use something called a 'neural network' to make this happen. ''')
+st.write('''It's like teaching a computer to recognize your writing, just like your teacher can!. We will be using a 'neural network' to make this happen. ''')
 
 st.write('''Think of a neural network as a super-smart detective who learns by looking at lots of different handwriting examples. ''')
 st.write('''This detective then figures out which letters and words are written in a special code. Once the detective knows the code, it can read what you wrote and even tell you what it says!''')
 
+st.subheader('''Step 1 : Training our Handwriting detective''')
+
+st.write('''The first thing we need to do, is provide clues and evidence to our detective, to allow him to learn how to analyze the handwriting.''')
+code='''from sklearn.datasets import fetch_openml 
+mnist = fetch_openml('mnist_784', as_frame=False, cache=False) #Loads mnist dataset from sklearn'''
+
+st.code(code, language='python')
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
