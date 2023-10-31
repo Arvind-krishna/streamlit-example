@@ -17,11 +17,20 @@ st.write('''This detective then figures out which letters and words are written 
 
 st.subheader('''Step 1 : Training our Handwriting detective''')
 
-st.write('''The first thing we need to do, is provide clues and evidence to our detective, to allow him to learn how to analyze the handwriting.''')
+st.write('''"Before our detective (the neural network) can become really good at reading handwriting, it needs some training, just like when you learn to ride a bicycle. 
+st.write('''We show it lots and lots of different handwritten examples of the numbers from 0-9 This will be our dataset. It practices and practices until it gets better at recognizing them. ''')
+st.write('''This part is like the detective's training.''')
+
+st.write('''Here's a small activity. Pick a color from below, and observe the numbers.''')
+selected_color = st.color_picker("Pick a color", "#FF5733")
+st.subheader(f'<span style="color: {selected_color};">0123456789</span>', unsafe_allow_html=True)
+
 code='''from sklearn.datasets import fetch_openml 
 mnist = fetch_openml('mnist_784', as_frame=False, cache=False) #Loads mnist dataset from sklearn'''
 
 st.code(code, language='python')
+
+st.write('''Awesome!. We've now loaded the dataset which 
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
