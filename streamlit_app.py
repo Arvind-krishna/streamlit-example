@@ -28,7 +28,7 @@ st.code(code, language='python')
 
 st.write('''Awesome!. We've now loaded the dataset of handwritten numbers from 0-9. That's a great start!. now, to train our detective.''')
 
-question = "Ok, What should we do next?"
+st.write("Ok, What should we do next?")
 choices = ["Train the detective!", "Test the detective!", "Train, and then test the detective!"]
 correct_answer = "Train, and then test the detective"
 
