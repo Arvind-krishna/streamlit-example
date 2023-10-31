@@ -5,7 +5,8 @@ import pandas as pd
 import streamlit as st
 
 
-st.title("Vizuara AI Labs : Handwritten Text Classification")
+st.title("Vizuara AI Labs")
+st.title("Handwritten Text Classification")
 st.image("image.jpg", width=300)
 
 with st.echo(code_location='below'):
