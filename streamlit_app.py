@@ -17,7 +17,7 @@ st.write('''This detective then figures out which letters and words are written 
 
 st.subheader('''Step 1 : Training our Handwriting detective''')
 
-st.write('''"Before our detective (the neural network) can become really good at reading handwriting, it needs some training, just like when you learn to ride a bicycle. 
+st.write('''"Before our detective (the neural network) can become really good at reading handwriting, it needs some training, just like when you learn to ride a bicycle. ''')
 st.write('''We show it lots and lots of different handwritten examples of the numbers from 0-9 This will be our dataset. It practices and practices until it gets better at recognizing them. ''')
 st.write('''This part is like the detective's training.''')
 
