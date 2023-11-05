@@ -30,7 +30,7 @@ st.write('''Awesome!. We've now loaded the dataset of handwritten numbers from 0
 
 st.write("Ok, What should we do next?")
 choices = ["Train the detective!", "Test the detective!", "Train, and then test the detective!"]
-correct_answer = "Train, and then test the detective"
+correct_answer = "Train, and then test the detective!"
 
 # Create a multiple-choice question using radio buttons
 user_answer = st.radio("Select your answer:", choices)
@@ -42,9 +42,18 @@ else:
     st.markdown("**Not quite.** :orange_heart:")
 
 
-st.subheader('''Step 1 : Gathering evidence''')
+st.subheader('''Step 2 : Training and Testing our AI detective''')
 
-st.write('''We show it lots and lots of different handwritten examples of the numbers from 0-9 This will be our dataset. It practices and practices until it gets better at recognizing them. ''')
-st.write('''This part is like the detective's training.''')
+st.write('''Before our AI detective can become really good at reading handwriting, it needs some training, just like when you learn to ride a bicycle. ''')
+st.write('''We show it lots and lots of different examples of handwriting, like the letters 'A,' 'B,' and 'C.' ''')
+st.write('''It practices and practices until it gets better at recognizing them. This part is like the detective's training.''')
+st.write('''But remember, a good detective needs to be tested to make sure they're really good at their job.''')
+st.write('''So, after all the training, we give our detective a special test. ''')
+st.write('''We show it some new handwriting that it has never seen before, like letters 'X,' 'Y,' and 'Z.' ''')
+st.write('''Our detective tries its best to read them. If it does a great job, that means our neural network is ready to help us accurately read handwriting. ''')
+st.write('''If not, we give it some more practice until it gets better at it. ''')
+st.write('''This testing part is like the detective showing how well it learned from the training, just like when you show how good you've become at riding your bike.''')
+st.write('''So, with practice and testing, our neural network becomes a real handwriting expert!"''')
+st.write('''We will first be splitting our data, into a training part and testing part''')
 
 
