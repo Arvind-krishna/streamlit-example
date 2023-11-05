@@ -66,9 +66,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random
 
 st.code(code1, language='python')
 st.markdown("""
-*Did you Know?*
+**Did you know?**
 
-Setting the random state to 42 in programming is like the famous "Answer to the Ultimate Question of Life, the Universe, and Everything" in "The Hitchhiker's Guide to the Galaxy." It's a default choice that, like the number 42, might seem random but actually serves as a consistent and reliable reference point. Just as the characters in the story seek wisdom from 42, programmers use this number to ensure their code behaves predictably and consistently, making it a reassuring and stable choice in the vast universe of programming possibilities.
+Why do we see random_state="42" a lot? 
+It is actually a reference from the movie "The Hitchhiker's Guide to the Galaxy". It became a convention that seems to have caught on.
+In the movie, when a supercomputer is asked the answer to “the Ultimate Question of Life, the Universe, and Everything." It thinks for a 
+really long time, and responds with "42"
 """)
 
 
