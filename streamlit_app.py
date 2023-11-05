@@ -60,3 +60,15 @@ st.write('''So, with practice and testing, our neural network becomes a real han
 st.write('''We will first be splitting our data, into a training part and testing part''')
 
 
+code1='''from sklearn.model_selection import train_test_split #This package helps split data into training and testing data
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42) #Creating train test split'''
+
+st.code(code1, language='python')
+st.markdown("""
+*Did you Know?*
+
+Setting the random state to 42 in programming is like the famous "Answer to the Ultimate Question of Life, the Universe, and Everything" in "The Hitchhiker's Guide to the Galaxy." It's a default choice that, like the number 42, might seem random but actually serves as a consistent and reliable reference point. Just as the characters in the story seek wisdom from 42, programmers use this number to ensure their code behaves predictably and consistently, making it a reassuring and stable choice in the vast universe of programming possibilities.
+""")
+
+
