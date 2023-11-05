@@ -28,7 +28,7 @@ st.code(code, language='python')
 
 st.write('''Awesome!. We've now loaded the dataset of handwritten numbers from 0-9. That's a great start!. now, to train our detective.''')
 
-st.write("Ok, Now how do we ensure our detective is ready to efficiently detect handwriting?")
+st.markdown("**Ok, Now how do we ensure our detective is ready to efficiently detect handwriting?**")
 choices = ["Train the detective!", "Test the detective!", "Train, and then test the detective!"]
 correct_answer = "Train, and then test the detective!"
 
@@ -39,9 +39,9 @@ user_answer = st.radio("Select your answer:", choices)
 if user_answer == correct_answer:
     st.markdown("**Correct! We need to train the detective, and also test, to see how good our AI detective really is!** :green_heart:")
 elif user_answer == "Train the detective!":
-    st.markdown("**Not quite. Something is missing! ** :orange_heart:") 
+    st.markdown("**Not quite. Something is missing!** :orange_heart:") 
 else :  
-    st.markdown("**Oops, our detective hasn't been trained yet ** :orange_heart:") 
+    st.markdown("**Oops, our detective hasn't been trained yet** :orange_heart:") 
 
 
 
