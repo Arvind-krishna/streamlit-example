@@ -28,7 +28,7 @@ st.code(code, language='python')
 
 st.write('''Awesome!. We've now loaded the dataset of handwritten numbers from 0-9. That's a great start!. now, to train our detective.''')
 
-st.write("Ok, What should we do next?")
+st.write("Ok, Now how do we ensure our detective is ready to efficiently detect handwriting?")
 choices = ["Train the detective!", "Test the detective!", "Train, and then test the detective!"]
 correct_answer = "Train, and then test the detective!"
 
@@ -37,9 +37,11 @@ user_answer = st.radio("Select your answer:", choices)
 
 # Check if the user's answer is correct and display feedback
 if user_answer == correct_answer:
-    st.markdown("**Correct!** :green_heart:")
-else:
-    st.markdown("**Not quite.** :orange_heart:")
+    st.markdown("**Correct! We need to train the detective, and also Test, to see how good he has become!** :green_heart:")
+elif user_answer == "Train the detective!":
+    st.markdown("**Not quite. Something is missing! ** :orange_heart:") 
+else :    
+
 
 
 st.subheader('''Step 2 : Training and Testing our AI detective''')
