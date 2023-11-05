@@ -45,7 +45,7 @@ else :
 
 
 
-st.subheader('''Step 2 : Training and Testing our AI detective''')
+st.subheader('''Step 2 : Creating a Training and Testing framework ''')
 
 st.write('''Before our AI detective can become really good at reading handwriting, it needs some training, just like when you learn to ride a bicycle. ''')
 st.write('''We show it lots and lots of different examples of handwriting, like the letters 'A,' 'B,' and 'C.' ''')
@@ -69,9 +69,20 @@ st.markdown("""
 **Did you know?**
 
 Why do we see random_state="42" a lot? 
-It is actually a reference from the movie "The Hitchhiker's Guide to the Galaxy". It became a convention that seems to have caught on.
+It is actually a reference from the movie "The Hitchhiker's Guide to the Galaxy". It soon became a programming convention that caught on.
+
 In the movie, when a supercomputer is asked the answer to “the Ultimate Question of Life, the Universe, and Everything." It thinks for a 
 really long time, and responds with "42"
 """)
+
+st.subheader('''Step 3 : Grooming our detective ''')
+
+st.write('''"Okay, imagine we're getting ready to teach a computer how to recognize pictures. Think of it like training a robot to tell us what's in a picture. To do this, we need to make the pictures a special shape so the computer can understand them. It's like putting the pictures in a magic box.
+
+Each picture is like a tiny puzzle made up of squares (pixels). Our magic box needs to know how many squares are in each picture, and we also have to tell it how many pictures we're going to show. For the pictures we're using today, they're all in black and white, like drawings. So, we say there's just one color channel (because it's only black and white), and each picture is 28 squares high and 28 squares wide.''')
+
+st.write('''Now, we want to split our pictures into two groups: one to help our robot learn (we call it 'XCnn_train'), and another group for testing how well it learned (we call it 'XCnn_test'). It's like having a practice session before a big game! We also have some labels to tell the robot what's in each picture.''')
+
+
 
 
