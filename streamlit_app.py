@@ -37,10 +37,11 @@ user_answer = st.radio("Select your answer:", choices)
 
 # Check if the user's answer is correct and display feedback
 if user_answer == correct_answer:
-    st.markdown("**Correct! We need to train the detective, and also Test, to see how good he has become!** :green_heart:")
+    st.markdown("**Correct! We need to train the detective, and also test, to see how good our AI detective really is!** :green_heart:")
 elif user_answer == "Train the detective!":
     st.markdown("**Not quite. Something is missing! ** :orange_heart:") 
-else :    
+else :  
+    st.markdown("**Oops, our detective hasn't been trained yet ** :orange_heart:") 
 
 
 
