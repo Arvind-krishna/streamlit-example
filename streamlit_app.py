@@ -38,7 +38,7 @@ user_answer = st.radio("Select your answer:", choices)
 
 # Check if the user's answer is correct and display feedback
 if user_answer == correct_answer:
-    st.markdown("**Excellent! We need to train the detective, and also test, to see how good our AI detective really is!** :green_heart:")
+    st.markdown("**Excellent! We need to train the detective, and also test, to see how good our detective really is!** :green_heart:")
 elif user_answer == "Train the detective!":
     st.markdown("**Not quite. Something is missing!** :orange_heart:") 
 else :  
@@ -48,17 +48,16 @@ else :
 
 st.subheader('''Step 2 : Creating a Training and Testing framework ''')
 
-st.write('''Before our AI detective can become really good at reading handwriting, it needs some training, just like when you learn to ride a bicycle. ''')
-st.write('''We show it lots and lots of different examples of handwriting, like the letters 'A,' 'B,' and 'C.' ''')
-st.write('''It practices and practices until it gets better at recognizing them. This part is like the detective's training.''')
+st.write('''In order to train our detective, We provide it lots and lots of different examples of handwriting, like the digits '1,' '3,' and '6', written in various ways ''')
+st.write('''It practices and practices until it gets better at recognizing them.''')
 st.write('''But remember, a good detective needs to be tested to make sure they're really good at their job.''')
 st.write('''So, after all the training, we give our detective a special test. ''')
-st.write('''We show it some new handwriting that it has never seen before, like letters 'X,' 'Y,' and 'Z.' ''')
+st.write('''We show it some new handwriting that it has never seen before, numbers written in ways he detective hasnt directly seen in the training ''')
 st.write('''Our detective tries its best to read them. If it does a great job, that means our neural network is ready to help us accurately read handwriting. ''')
 st.write('''If not, we give it some more practice until it gets better at it. ''')
 st.write('''This testing part is like the detective showing how well it learned from the training, just like when you show how good you've become at riding your bike.''')
 st.write('''So, with practice and testing, our neural network becomes a real handwriting expert!"''')
-st.write('''We will first be splitting our data, into a training part and testing part''')
+st.write('''We will first be splitting our data, into a training part, and a testing part''')
 
 
 code1='''from sklearn.model_selection import train_test_split #This package helps split data into training and testing data
@@ -78,13 +77,13 @@ really long time, and responds with "42"
 
 st.subheader('''Step 3 : Grooming our detective ''')
 
-st.write('''"Okay, imagine we're getting ready to teach a computer how to recognize pictures. Think of it like training a robot to tell us what's in a picture. To do this, we need to make the pictures a special shape so the computer can understand them. It's like putting the pictures in a magic box.
+st.write('''"Okay, so now, we're getting ready to teach a computer how to recognize pictures. Think of it like training a robot to tell us what's in a picture. To do this, we need to make the pictures a special shape so the computer can understand them. It's like putting the pictures in a magic box.
 
 Each picture is like a tiny puzzle made up of squares (pixels). Our magic box needs to know how many squares are in each picture, and we also have to tell it how many pictures we're going to show. For the pictures we're using today, they're all in black and white, like drawings. So, we say there's just one color channel (because it's only black and white), and each picture is 28 squares high and 28 squares wide.''')
 st.image("grid.png")
 
 st.write('''We're now going to create a simple, fully connected neural network with one hidden layer. ''')
-st.write('''The input layer has 784 dimensions (=28x28, based on the input grid), hidden layer has 98 (= 784 / 8) and output layer 10 neurons, representing digits 0 - 9.''')
+st.write('''The input layer has 784 dimensions (=28x28, based on the input picture), hidden layer has 98 (= 784 / 8) and the output layer 10 neurons, representing digits 0 - 9.''')
 st.write('''Let's quickly try to understand how the layers work, using a simple real-world example:''')
 note1='''The first layer helps the robot understand the picture. It's like the robot's eyes. It looks at the picture and tries to recognize what's in it.
 
