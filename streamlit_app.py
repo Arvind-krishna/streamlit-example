@@ -210,7 +210,7 @@ st.write('''Let's import a package from sklearn that helps us calculate accuracy
 st.code('''from sklearn.metrics import accuracy_score''',language='python')
 st.write('''now, let's have 'net' give us predictions for data from the test split''') 
 st.code('''y_pred = net.predict(X_test)''',language='python')
-st.write('''Ok, so now, 'net' has been tested. let's now evaluate and see its accuracy.
+st.write('''Ok, so now, 'net' has been tested. let's now evaluate and see its accuracy.''')
 
 st.subheader('''Step 5 : Evaluating our detective ''')
 st.write('''Let's now calculate the accuracy of net's predictions vs the actual results''')
