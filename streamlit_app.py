@@ -84,6 +84,13 @@ st.image("grid.png")
 
 st.write('''We're now going to create a simple, fully connected neural network with one hidden layer. ''')
 st.write('''The input layer has 784 dimensions (=28x28, based on the input grid), hidden layer has 98 (= 784 / 8) and output layer 10 neurons, representing digits 0 - 9.''')
+st.write('''Let's quickly try to understand how the layers work, using a simple real-world example:''')
+note1='''The first layer helps the robot understand the picture. It's like the robot's eyes. It looks at the picture and tries to recognize what's in it.
+
+The second layer helps the robot think and make decisions. It's like the robot's brain. It thinks really hard about the picture to figure out what's inside.
+
+The third layer helps the robot make its final decision. It's like the robot's mouth. It says, 'I think it's a cat!' or 'I think it's a dog!''''
+st.write(note1)
 st.write('''Let's now import the PyTorch packages we'll be using, set up the device, and also the dimensions for our Neural Network.''')
 code2='''import torch 
 from torch import nn
@@ -98,7 +105,7 @@ output_dim = len(np.unique(mnist.target))
 mnist_dim, hidden_dim, output_dim
 (784, 98, 10)'''
 st.code(code2, language='python')
-st.write('''Now, let's create a nueral net in PyTorch''')
+st.write('''Now, let's create a neural network in PyTorch''')
 code3='''class ClassifierModule(nn.Module):
     def __init__(
             self,
