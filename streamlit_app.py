@@ -25,7 +25,7 @@ code='''from sklearn.datasets import fetch_openml
 mnist = fetch_openml('mnist_784', as_frame=False, cache=False) #Loads mnist dataset from sklearn'''
 
 st.code(code, language='python')
-st.write('''Awesome!. Our detective has now been trained. Now, for the next step, to test the detective.
+
 
 st.write('''Awesome!. We've now loaded the dataset of handwritten numbers from 0-9. That's a great start!. now, to train our detective.''')
 
