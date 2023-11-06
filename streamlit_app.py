@@ -25,6 +25,7 @@ code='''from sklearn.datasets import fetch_openml
 mnist = fetch_openml('mnist_784', as_frame=False, cache=False) #Loads mnist dataset from sklearn'''
 
 st.code(code, language='python')
+st.write('''Awesome!. Our detective has now been trained. Now, for the next step, to test the detective.
 
 st.write('''Awesome!. We've now loaded the dataset of handwritten numbers from 0-9. That's a great start!. now, to train our detective.''')
 
@@ -202,6 +203,25 @@ op=''' epoch    train_loss    valid_acc    valid_loss     dur
      19        0.1728       0.9615        0.1250  0.9879
      20        0.1698       0.9613        0.1248  1.0151'''
 st.code(op,language='python')
+st.write(''Awesome, our detective has been trained. Now, let's test our detective to see how well it performs!
+
+st.subheader('''Step 4 : Testing our detective ''')
+st.write('''Let's import a package from sklearn that helps us calculate accuracy score''')
+st.code('''from sklearn.metrics import accuracy_score''',language='python')
+st.write('''now, let's have 'net' give us predictions for data from the test split''') 
+st.code('''y_pred = net.predict(X_test)''',language='python')
+st.write('''Ok, so now, 'net' has been tested. let's now evaluate and see its accuracy.
+
+st.subheader('''Step 5 : Evaluating our detective ''')
+st.write('''Let's now calculate the accuracy of net's predictions vs the actual results''')
+st.code('''accuracy_score(y_test, y_pred)''',language='python')
+st.code('''0.9631428571428572''',language='python')
+st.markdown('''**Wow, net was able to predict with an accuracy of  about **96%**! For a network with only one hidden layer, it is not too bad!''')
+
+
+st.markdown('''**Congratulations! You have completed this Chapter on "Handwriting detection using a simple neural network!**''')
+st.markdown('''If you have further questions, or need more help? Please check out the FAQ section for this chapter to see if your question is answered already.''')
+st.markdown('''if your concern isnt addressed,kindly use a communication channel to reach out to us, and we'll have our experts guide you as soon as possible''')
 
 
 
