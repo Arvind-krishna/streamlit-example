@@ -87,9 +87,9 @@ st.write('''The input layer has 784 dimensions (=28x28, based on the input grid)
 st.write('''Let's quickly try to understand how the layers work, using a simple real-world example:''')
 note1='''The first layer helps the robot understand the picture. It's like the robot's eyes. It looks at the picture and tries to recognize what's in it.
 
-The second layer helps the robot think and make decisions. It's like the robot's brain. It thinks really hard about the picture to figure out what's inside.
+The second layer helps the robot think and make decisions. It's like the robot's brain. It thinks really hard about the picture to figure out what's actually inside.
 
-The third layer helps the robot make its final decision. It's like the robot's mouth. It says, 'I think it's a cat!' or 'I think it's a dog!'''
+The third layer helps the robot make its final decision. It's like the robot's mouth. It says, 'I think it's 4!' or 'I think it's 7!'''
 st.write(note1)
 st.write('''Let's now import the PyTorch packages we'll be using, set up the device, and also the dimensions for our Neural Network.''')
 code2='''import torch 
@@ -134,12 +134,39 @@ Dont worry! We'll explore the steps/usage in a simplified manner.
 
 **Dropout**: Sometimes, our robot wants to be really careful. It's like when you're crossing a tricky bridge, and you take tiny steps to make sure you don't fall. Our robot does something similar with a move called 'dropout.' When it's not very sure about the picture, it uses 'dropout' to slow down and think more. This helps it avoid making mistakes. So, 'dropout' is like our robot's safety move.
 
-**Softmax**: When our robot is confident and ready to tell us what's in the picture, it uses 'softmax.' It's like when you're sure about the answer to a question and raise your hand in class. Our robot speaks up and confidently says, 'I think it's a cat!' or 'I think it's a dog!' It doesn't guess – it uses 'softmax' to make a smart and confident decision.
+**Softmax**: When our robot is confident and ready to tell us what's in the picture, it uses 'softmax.' It's like when you're sure about the answer to a question and raise your hand in class. Our robot speaks up and confidently says, 'I think it's 8!' or 'I think it's 7!' It doesn't guess – it uses 'softmax' to make a smart and confident decision.
 
 **Forward**: To make all of this happen, our robot has a special step called 'forward.' It's like a magic spell that combines 'dropout' and 'softmax' with its thinking and seeing abilities. When the robot looks at the picture, it thinks about it, uses 'dropout' to be careful, and then speaks up with 'softmax' to tell us what it sees. 'Forward' is like the robot's secret recipe for playing the picture game.
 
-With these three moves, our robot becomes a picture game champion. It's cautious when it needs to be and confident when it knows the answer, all thanks to 'dropout,' 'softmax,' and 'forward'!"''')
+With these three moves, our robot becomes a handwriting detection champion. It's cautious when it needs to be and confident when it knows the answer, all thanks to 'dropout,' 'softmax,' and 'forward'!"''')
 
+st.write('''Before moving on to the next step, let's have a quick trivia to recap''')
+
+question = """In a secret code game, you have a message written in Invisible Ink. You need a special flashlight to see the message. 
+Is the hidden layer in a neural network like the invisible ink, the flashlight, or the message that appears when you use the flashlight?"""
+choices = ["Invisible Ink", "Flashlight", "Message"]
+correct_choice = "Message"
+
+# Create a radio button to select the answer
+user_answer = st.radio(question, choices)
+
+# Define the correct and incorrect messages
+correct_message = """Awesome, Great job! 
+The hidden layer in a neural network is like the message that appears when you use the flashlight.
+Just as the message becomes visible when you shine the special flashlight on the invisible ink, the hidden layer in a neural network contains important information that becomes useful and meaningful when the network processes it.
+So, it's a bit like the magic behind the scenes that helps the network understand and make decisions.
+"""
+
+incorrect_message = "Oops, not really"
+
+# Display the feedback message based on the answer
+if user_answer == correct_choice:
+    st.markdown(correct_message)
+else:
+    st.write(incorrect_message)
+st.subheader('''Step 3 : Building and training our detective ''')
+st.write('''next, we'll import NeuralNetClassifier from skorch, and create our detective. skorch allows to use PyTorch's networks in the SciKit-Learn setting''')
+st.code('''from skorch import NeuralNetClassifier''', language='python')
 
 
 
