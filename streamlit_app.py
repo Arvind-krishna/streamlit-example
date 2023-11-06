@@ -94,8 +94,31 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu' #switching device to 'cu
 mnist_dim = X.shape[1]
 hidden_dim = int(mnist_dim/8)
 output_dim = len(np.unique(mnist.target))
-'''
+
+mnist_dim, hidden_dim, output_dim
+(784, 98, 10)'''
 st.code(code2, language='python')
+st.write('''Now, let's create a nueral net in PyTorch''')
+code3='''class ClassifierModule(nn.Module):
+    def __init__(
+            self,
+            input_dim=mnist_dim,
+            hidden_dim=hidden_dim,
+            output_dim=output_dim,
+            dropout=0.5,
+    ):
+        super(ClassifierModule, self).__init__()
+        self.dropout = nn.Dropout(dropout)
+
+        self.hidden = nn.Linear(input_dim, hidden_dim)
+        self.output = nn.Linear(hidden_dim, output_dim)
+
+    def forward(self, X, **kwargs):
+        X = F.relu(self.hidden(X))
+        X = self.dropout(X)
+        X = F.softmax(self.output(X), dim=-1)
+        return X'''
+st.code(code3, language='python')
 
 
 
