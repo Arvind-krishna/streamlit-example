@@ -148,7 +148,7 @@ choices = ["Invisible Ink", "Flashlight", "Message"]
 correct_choice = "Message"
 
 # Create a radio button to select the answer
-user_answer = st.radio(question, choices)
+user_answer = st.radio("", choices)
 
 # Define the correct and incorrect messages
 correct_message = """**Awesome, Great job!**
