@@ -82,6 +82,21 @@ st.write('''"Okay, imagine we're getting ready to teach a computer how to recogn
 Each picture is like a tiny puzzle made up of squares (pixels). Our magic box needs to know how many squares are in each picture, and we also have to tell it how many pictures we're going to show. For the pictures we're using today, they're all in black and white, like drawings. So, we say there's just one color channel (because it's only black and white), and each picture is 28 squares high and 28 squares wide.''')
 st.image("grid.png")
 
+st.write('''We're now going to create a simple, fully connected neural network with one hidden layer. ''')
+st.write('''The input layer has 784 dimensions (=28x28, based on the input grid), hidden layer has 98 (= 784 / 8) and output layer 10 neurons, representing digits 0 - 9.''')
+st.write('''Let's now import the PyTorch packages we'll be using, set up the device, and also the dimensions for our Neural Network.''')
+code2='''import torch 
+from torch import nn
+import torch.nn.functional as F
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu' #switching device to 'cuda'(gpu) if available, else 'cpu'
+
+mnist_dim = X.shape[1]
+hidden_dim = int(mnist_dim/8)
+output_dim = len(np.unique(mnist.target))
+'''
+st.code(code2, language='python')
+
 
 
 
