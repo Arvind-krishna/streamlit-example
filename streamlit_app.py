@@ -89,7 +89,7 @@ note1='''The first layer helps the robot understand the picture. It's like the r
 
 The second layer helps the robot think and make decisions. It's like the robot's brain. It thinks really hard about the picture to figure out what's inside.
 
-The third layer helps the robot make its final decision. It's like the robot's mouth. It says, 'I think it's a cat!' or 'I think it's a dog!''''
+The third layer helps the robot make its final decision. It's like the robot's mouth. It says, 'I think it's a cat!' or 'I think it's a dog!'''
 st.write(note1)
 st.write('''Let's now import the PyTorch packages we'll be using, set up the device, and also the dimensions for our Neural Network.''')
 code2='''import torch 
