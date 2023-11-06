@@ -17,8 +17,8 @@ st.write('''This detective then figures out which letters and words are written 
 
 st.subheader('''Step 1 : Gathering evidence''')
 
-st.write('''"Before our detective (the neural network) can become really good at reading handwriting, it needs some high quality evidence/clues, and also some training, just like when you learn to ride a bicycle. ''')
-
+st.write('''Before our detective (the neural network) can become really good at reading handwriting, it needs some high quality evidence/clues, and also some training, just like when you learn to ride a bicycle. ''')
+st.write('''In this chapter, we will be training our detective to analyse and detect handwritten numbers. Lets gather some data containing handwritten numbers, which could help us train our detective''')
 
 
 code='''from sklearn.datasets import fetch_openml 
