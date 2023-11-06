@@ -219,8 +219,8 @@ st.markdown('''**Wow, net was able to predict with an accuracy of  about **96%**
 
 
 st.markdown('''**Congratulations! You have completed this Chapter on "Handwriting detection using a simple neural network!**''')
-st.markdown('''If you have further questions, or need more help? Please check out the FAQ section for this chapter to see if your question is answered already.''')
-st.markdown('''if your concern isnt addressed,kindly use a communication channel to reach out to us, and we'll have our experts guide you as soon as possible''')
+st.markdown('''Need help? Please check out the FAQ section of this chapter. Your question may have been answered already.''')
+st.markdown('''Can't find the help you're looking for? kindly use a communication channel to reach out to us, and we'll have our experts guide you as soon as possible''')
 
 
 
