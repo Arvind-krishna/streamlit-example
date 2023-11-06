@@ -79,7 +79,7 @@ st.subheader('''Step 3 : Grooming our detective ''')
 
 st.write('''"Okay, so now, we're getting ready to teach a computer how to recognize pictures. Think of it like training a robot to tell us what's in a picture. To do this, we need to make the pictures a special shape so the computer can understand them. It's like putting the pictures in a magic box.
 
-Each picture is like a tiny puzzle made up of squares (pixels). Our magic box needs to know how many squares are in each picture, and we also have to tell it how many pictures we're going to show. For the pictures we're using today, they're all in black and white, like drawings. So, we say there's just one color channel (because it's only black and white), and each picture is 28 squares high and 28 squares wide.''')
+Each picture is like a tiny puzzle made up of squares (pixels). Our magic box needs to know how many squares are in each picture, and we also have to tell it how many pictures we're going to show. For the pictures we're using today, each picture is 28 squares high and 28 squares wide.''')
 st.image("grid.png")
 
 st.write('''We're now going to create a simple, fully connected neural network with one hidden layer. ''')
