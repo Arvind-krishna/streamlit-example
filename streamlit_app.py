@@ -126,7 +126,10 @@ code3='''class ClassifierModule(nn.Module):
         X = F.softmax(self.output(X), dim=-1)
         return X'''
 st.code(code3, language='python')
-st.write('''Does the above code confuse you? Don't know what's going on? Dont worry! We'll explore the steps/usage in a simplified manner.
+st.write('''Does the above code confuse you? Don't know what's going on? 
+
+Dont worry! We'll explore the steps/usage in a simplified manner.
+
 ReLU (Rectified Linear Unit): Think of 'ReLU' as the robot's way of getting excited when it sees something interesting in a picture. It's like when you get really happy when you see your favorite toy. Our robot's 'ReLU' move makes it light up with excitement and focus on the exciting parts of the picture.
 
 Dropout: Sometimes, our robot wants to be really careful. It's like when you're crossing a tricky bridge, and you take tiny steps to make sure you don't fall. Our robot does something similar with a move called 'dropout.' When it's not very sure about the picture, it uses 'dropout' to slow down and think more. This helps it avoid making mistakes. So, 'dropout' is like our robot's safety move.
