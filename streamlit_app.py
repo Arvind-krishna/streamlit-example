@@ -169,7 +169,7 @@ else:
 st.subheader('''Step 3 : Building and training our detective ''')
 st.write('''next, we'll import NeuralNetClassifier from skorch, and create our detective. skorch allows to use PyTorch's networks in the SciKit-Learn setting''')
 st.code('''from skorch import NeuralNetClassifier''', language='python')
-st.write('''Now, let's build our detective. let's call him 'net''')
+st.write('''Now, let's build our detective,whom we shall be called "net"''')
 st.code('''net = NeuralNetClassifier(
     ClassifierModule,
     max_epochs=20,
@@ -177,7 +177,7 @@ st.code('''net = NeuralNetClassifier(
     device=device,
 )''',language='python')
 
-st.write('''Great! now our detective 'net' is ready for training. Since we've set max_epocsh to 20, 'net' will train for a total of 20 cycles/epochs''') 
+st.write('''Great! now our detective 'net' is ready for training. Since we've set max_epochs to 20, 'net' will train for a total of 20 cycles/epochs''') 
 st.code('''net.fit(X_train, y_train);''',language='python')
 op=''' epoch    train_loss    valid_acc    valid_loss     dur
 -------  ------------  -----------  ------------  ------
@@ -201,7 +201,7 @@ op=''' epoch    train_loss    valid_acc    valid_loss     dur
      18        0.1786       0.9613        0.1266  0.9851
      19        0.1728       0.9615        0.1250  0.9879
      20        0.1698       0.9613        0.1248  1.0151'''
-st.code(op,language-'python')
+st.code(op,language='python')
 
 
 
