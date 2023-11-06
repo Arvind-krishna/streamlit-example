@@ -142,8 +142,8 @@ With these three moves, our robot becomes a handwriting detection champion. It's
 
 st.write('''Before moving on to the next step, let's have a quick trivia to recap''')
 
-question = """In a secret code game, you have a message written in Invisible Ink. You need a special flashlight to see the message. 
-Is the hidden layer in a neural network like the invisible ink, the flashlight, or the message that appears when you use the flashlight?"""
+st.write("""In a secret code game, you have a message written in Invisible Ink. You need a special flashlight to see the message. 
+Is the hidden layer in a neural network like the invisible ink, the flashlight, or the message that appears when you use the flashlight?""")
 choices = ["Invisible Ink", "Flashlight", "Message"]
 correct_choice = "Message"
 
@@ -151,19 +151,19 @@ correct_choice = "Message"
 user_answer = st.radio(question, choices)
 
 # Define the correct and incorrect messages
-correct_message = """Awesome, Great job! 
+correct_message = """**Awesome, Great job!**
 The hidden layer in a neural network is like the message that appears when you use the flashlight.
 Just as the message becomes visible when you shine the special flashlight on the invisible ink, the hidden layer in a neural network contains important information that becomes useful and meaningful when the network processes it.
-So, it's a bit like the magic behind the scenes that helps the network understand and make decisions.
+So, it's a bit like the magic behind the scenes that helps the network understand and make decisions :green_heart:.
 """
 
-incorrect_message = "Oops, not really"
+incorrect_message = "**Oops, not really** :orange_heart:"
 
 # Display the feedback message based on the answer
 if user_answer == correct_choice:
     st.markdown(correct_message)
 else:
-    st.write(incorrect_message)
+    st.markdown(incorrect_message)
 st.subheader('''Step 3 : Building and training our detective ''')
 st.write('''next, we'll import NeuralNetClassifier from skorch, and create our detective. skorch allows to use PyTorch's networks in the SciKit-Learn setting''')
 st.code('''from skorch import NeuralNetClassifier''', language='python')
