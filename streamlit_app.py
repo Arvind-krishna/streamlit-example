@@ -215,7 +215,7 @@ st.subheader('''Step 5 : Evaluating our detective ''')
 st.write('''Let's now calculate the accuracy of net's predictions vs the actual results''')
 st.code('''accuracy_score(y_test, y_pred)''',language='python')
 st.code('''0.9631428571428572''',language='python')
-st.markdown('''**Wow, net was able to predict with an accuracy of  about **96%**! For a network with only one hidden layer, it is not too bad!''')
+st.markdown('''Wow, net was able to predict with an accuracy of  about **96%**! For a network with only one hidden layer, it is not too bad!''')
 
 
 st.markdown('''**Congratulations! You have completed this Chapter on "Handwriting detection using a simple neural network!**''')
