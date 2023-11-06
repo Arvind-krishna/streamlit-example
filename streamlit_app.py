@@ -203,7 +203,7 @@ op=''' epoch    train_loss    valid_acc    valid_loss     dur
      19        0.1728       0.9615        0.1250  0.9879
      20        0.1698       0.9613        0.1248  1.0151'''
 st.code(op,language='python')
-st.write(''Awesome, our detective has been trained. Now, let's test our detective to see how well it performs!
+st.write('''Awesome, our detective has been trained. Now, let's test our detective to see how well it performs!''')
 
 st.subheader('''Step 4 : Testing our detective ''')
 st.write('''Let's import a package from sklearn that helps us calculate accuracy score''')
