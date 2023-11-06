@@ -170,15 +170,38 @@ st.subheader('''Step 3 : Building and training our detective ''')
 st.write('''next, we'll import NeuralNetClassifier from skorch, and create our detective. skorch allows to use PyTorch's networks in the SciKit-Learn setting''')
 st.code('''from skorch import NeuralNetClassifier''', language='python')
 st.write('''Now, let's build our detective. let's call him 'net''')
-st.code('''torch.manual_seed(0)
-
-net = NeuralNetClassifier(
+st.code('''net = NeuralNetClassifier(
     ClassifierModule,
     max_epochs=20,
     lr=0.1,
     device=device,
 )''',language='python')
 
+st.write('''Great! now our detective 'net' is ready for training. Since we've set max_epocsh to 20, 'net' will train for a total of 20 cycles/epochs''') 
+st.code('''net.fit(X_train, y_train);''',language='python')
+op=''' epoch    train_loss    valid_acc    valid_loss     dur
+-------  ------------  -----------  ------------  ------
+      1        0.8387       0.8800        0.4174  3.9125
+      2        0.4332       0.9103        0.3133  0.9897
+      3        0.3612       0.9233        0.2684  1.3494
+      4        0.3233       0.9309        0.2317  1.3793
+      5        0.2938       0.9353        0.2173  0.9992
+      6        0.2738       0.9390        0.2039  0.9964
+      7        0.2600       0.9454        0.1868  1.0119
+      8        0.2427       0.9484        0.1757  1.6899
+      9        0.2362       0.9503        0.1683  1.0590
+     10        0.2226       0.9512        0.1621  1.0045
+     11        0.2184       0.9529        0.1565  0.9868
+     12        0.2090       0.9541        0.1508  0.9842
+     13        0.2067       0.9570        0.1446  0.9813
+     14        0.1978       0.9570        0.1412  1.3288
+     15        0.1923       0.9582        0.1392  1.3540
+     16        0.1889       0.9582        0.1342  1.1838
+     17        0.1855       0.9612        0.1297  1.1465
+     18        0.1786       0.9613        0.1266  0.9851
+     19        0.1728       0.9615        0.1250  0.9879
+     20        0.1698       0.9613        0.1248  1.0151'''
+st.code(op,language-'python')
 
 
 
