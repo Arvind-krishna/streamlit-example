@@ -1,3 +1,7 @@
 altair
 pandas
 streamlit
+sklearn.datasets
+sklearn.model_selection
+numpy
+matplotlib.pyplot
