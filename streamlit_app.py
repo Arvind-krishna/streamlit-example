@@ -89,7 +89,7 @@ st.write('''So, with practice and testing, our neural network becomes a real han
 st.write('''We will first be splitting our data, into a training part, and a testing part''')
 st.write('''But before that, we need to determine the test size. This represents the amount of data to be used in the test split.''')
 st.write('''For example, lets say we have 10000 images. If we provide a value of 0.25 as test size, it means that the test size is 25% of the total, so it will be 2500 images''')
-st.write('''It's also important to experiment with various test sizes, and notice the difference it makes, as test size is plays a key role while training a model.
+st.write('''It's also important to experiment with various test sizes, and notice the difference it makes, as test size is plays a key role while training a model.''')
 st.write('''Let's now decide the  test size for our neural network.''')
 testsplit = st.number_input("Enter a number (0-1)", min_value=0, max_value=1, value=0.25, step=0.05)
 
