@@ -259,10 +259,10 @@ st.code('''net.fit(X_train, y_train);''',language='python')
 if st.button('Train Model'):
     model = create_model()
     model.fit(train_images, train_labels, epochs=num_epochs)
-    st.write(f"Model trained for {num_epochs} epochs.")
+    st.write(f"Hurray! our neural networks has been trained for {num_epochs} epochs.")
 
-st.code(op,language='python')
-st.write('''Awesome, our detective has been trained. Now, let's test our detective to see how well it performs!''')
+
+st.write('''Awesome, now that our detective has been trained. Now, let's test our detective to see how well it performs!''')
 
 st.subheader('''Step 4 : Testing our detective ''')
 st.write('''Let's import a package from sklearn that helps us calculate accuracy score''')
