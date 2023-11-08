@@ -170,6 +170,47 @@ code3='''class ClassifierModule(nn.Module):
         X = F.softmax(self.output(X), dim=-1)
         return X'''
 st.code(code3, language='python')
+#####################
+
+# Function to create a simple model
+def create_model():
+    model = tf.keras.models.Sequential([
+        tf.keras.layers.Flatten(input_shape=(28, 28)),
+        tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.Dense(10, activation='softmax')
+    ])
+
+    model.compile(optimizer='adam',
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
+    return model
+
+
+
+# Input for the number of epochs
+num_epochs = st.number_input("Enter the number of epochs", min_value=1, value=5, step=1)
+
+# Load the MNIST dataset
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+# Normalize the pixel values
+train_images, test_images = train_images / 255.0, test_images / 255.0
+
+# Train the model based on user input
+if st.button('Train Model'):
+    model = create_model()
+    model.fit(train_images, train_labels, epochs=num_epochs)
+    st.write(f"Model trained for {num_epochs} epochs.")
+
+
+##################################
+
+
+
+
+
+
 st.write('''Does the above code confuse you? Don't know what's going on? 
 
 Dont worry! We'll explore the steps/usage in a simplified manner.
