@@ -93,6 +93,13 @@ st.write('''It's also important to experiment with various test sizes, and notic
 st.write('''Let's now decide the  test size for our neural network.''')
 testsplit = st.number_input("Enter a number (0-1)", min_value=0.0, max_value=1.0, value=0.25, step=0.05)
 
+mnist = fetch_openml('mnist_784', as_frame=False, cache=False)
+X = mnist.data.astype('float32')
+y = mnist.target.astype('int64')
+X /= 255.0
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=testsplit, random_state=42) #Creating train test split
+
 
 code1='''from sklearn.model_selection import train_test_split #This package helps split data into training and testing data
 
