@@ -24,10 +24,18 @@ st.subheader('''Step 1 : Gathering evidence''')
 
 st.write('''Before our detective (the neural network) can become really good at reading handwriting, it needs some high quality evidence/clues, and also some training, just like when you learn to ride a bicycle. ''')
 st.write('''In this chapter, we will be training our detective to analyse and detect handwritten numbers. Lets gather some data containing handwritten numbers, which could help us train our detective''')
-st.write('''Will be using the **MNIST** dataset to train our neural network''')
-
+st.write('''Will be using the **MNIST** dataset to train our neural network.''')
+st.write('''The MNIST dataset contains various samples of handwritten digits from 0-9. They are a total of 70,000 images in the dataset, and each has 784 dimensions
+st.write('''Think of each image as 28x28 grid (=784 total cells). Each cell represents a pixel, and it stores the intensity value for that particular pixel.''')
+st.write('''We will now load the MNIST dataset, andf also look at a few samples from the dataset.''')
 mnist = tf.keras.datasets.mnist
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+code='''from sklearn.datasets import fetch_openml 
+mnist = fetch_openml('mnist_784', as_frame=False, cache=False) #Loads mnist dataset from sklearn'''
+
+st.code(code, language='python')
+st.write('''Enter a number below, and click on "Show Image" to see a sample image of the selected number from the **MNIST** Dataset.''')
 
 number = st.number_input("Enter a number (0-9)", min_value=0, max_value=9, value=0, step=1)
 
@@ -38,17 +46,14 @@ if st.button('Show Image'):
     if filtered_indices:
         # Display the first image found with the selected number
         selected_index = filtered_indices[0]
-        st.image(train_images[selected_index],width=300, caption=f"Image of {number}")
+        st.image(train_images[selected_index],width=200, caption=f"Image of {number}")
     else:
         st.write(f"No images found for the number {number} in the dataset.")
 
 
 
 
-code='''from sklearn.datasets import fetch_openml 
-mnist = fetch_openml('mnist_784', as_frame=False, cache=False) #Loads mnist dataset from sklearn'''
 
-st.code(code, language='python')
 
 
 st.write('''Awesome!. We've now loaded the dataset of handwritten numbers from 0-9. That's a great start!. now, to train our detective.''')
