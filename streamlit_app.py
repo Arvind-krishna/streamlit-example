@@ -38,12 +38,12 @@ if st.button('Show Image'):
     if filtered_indices:
         # Display the first image found with the selected number
         selected_index = filtered_indices[0]
-        st.image(train_images[selected_index], width=150, caption=f"Image of {number}")
+        st.image(train_images[selected_index], caption=f"Image of {number}")
     else:
         st.write(f"No images found for the number {number} in the dataset.")
 
 
-st.image(first_image_of_n, use_column_width=True)
+
 
 code='''from sklearn.datasets import fetch_openml 
 mnist = fetch_openml('mnist_784', as_frame=False, cache=False) #Loads mnist dataset from sklearn'''
