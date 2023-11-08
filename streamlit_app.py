@@ -277,11 +277,13 @@ st.code('''accuracy_score(y_test, y_pred)''',language='python')
 
 test_acc=''
 if st.button('Evaluate Model'):
-    test_loss, test_acc = model.evaluate(test_images, test_labels)
-    st.code(f"{test_acc}")
-    st.markdown(f"Wow, our neural network was able to predict with an accuracy of  {test_acc}! For a network with only one hidden layer, it is not too bad!")
-
-
+    if "model" in locals():
+        test_loss, test_acc = model.evaluate(test_images, test_labels)
+        st.code(f"{test_acc}")
+        st.markdown(f"Wow, our neural network was able to predict with an accuracy of  {test_acc}! For a network with only one hidden layer, it is not too bad!")
+    else:
+    print("Oops. the Model hasnt been trained yet. Please complete the "training" phase before evaluating.")
+    
 st.markdown('''**Congratulations! You have completed this Chapter on "Handwriting detection using a simple neural network!**''')
 st.markdown('''Need help? Please check out the FAQ section of this chapter. Your question may have been answered already.''')
 st.markdown('''Can't find the help you're looking for? kindly use a communication channel to reach out to us, and we'll have our experts guide you as soon as possible''')
