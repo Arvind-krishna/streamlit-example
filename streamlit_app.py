@@ -282,7 +282,7 @@ if st.button('Evaluate Model'):
         st.code(f"{test_acc}")
         st.markdown(f"Wow, our neural network was able to predict with an accuracy of  {test_acc}! For a network with only one hidden layer, it is not too bad!")
     else:
-        print("Oops. the Model hasnt been trained yet. Please complete the 'training' phase before evaluating.")
+        st.markdown(f"Oops. the Model hasnt been trained yet. Please complete the 'training' phase before evaluating.")
     
 st.markdown('''**Congratulations! You have completed this Chapter on "Handwriting detection using a simple neural network!**''')
 st.markdown('''Need help? Please check out the FAQ section of this chapter. Your question may have been answered already.''')
