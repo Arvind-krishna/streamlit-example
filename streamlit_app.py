@@ -7,6 +7,7 @@ from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
+import tensorflow as tf
 
 
 st.title("Vizuara AI Labs")
@@ -25,12 +26,21 @@ st.write('''Before our detective (the neural network) can become really good at 
 st.write('''In this chapter, we will be training our detective to analyse and detect handwritten numbers. Lets gather some data containing handwritten numbers, which could help us train our detective''')
 st.write('''Will be using the **MNIST** dataset to train our neural network''')
 
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
 
-mnist = fetch_openml('mnist_784', version=1, as_frame=False)
-mnist_df = pd.DataFrame(data=mnist.data, columns=mnist.feature_names)
 number = st.number_input("Enter a number (0-9)", min_value=0, max_value=9, value=0, step=1)
-n=str(number)
-first_image_of_n = mnist_df[mnist_df['class'] == n].iloc[0, :-1].values.reshape(28, 28)
+
+if st.button('Show Image'):
+    # Filter for the selected number
+    filtered_indices = [i for i, label in enumerate(train_labels) if label == number]
+
+    if filtered_indices:
+        # Display the first image found with the selected number
+        selected_index = filtered_indices[0]
+        st.image(train_images[selected_index], width=150, caption=f"Image of {number}")
+    else:
+        st.write(f"No images found for the number {number} in the dataset.")
 
 
 st.image(first_image_of_n, use_column_width=True)
