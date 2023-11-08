@@ -5,4 +5,7 @@ scikit-learn
 numpy
 matplotlib
 tensorflow-cpu
+runipy
+opencv-python
+streamlit_drawable_canvas==0.4.0
 
