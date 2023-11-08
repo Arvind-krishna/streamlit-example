@@ -91,10 +91,10 @@ st.write('''But before that, we need to determine the test size. This represents
 st.write('''For example, lets say we have 10000 images. If we provide a value of 0.25 as test size, it means that the test size is 25% of the total, so it will be 2500 images''')
 st.write('''It's also important to experiment with various test sizes, and notice the difference it makes, as test size is plays a key role while training a model.''')
 st.write('''Let's now decide the  test size for our neural network.''')
-testsplit = st.number_input("Enter a number (0-1)", min_value=0, max_value=1, value=0.25, step=0.05)
+#testsplit = st.number_input("Enter a number (0-1)", min_value=0, max_value=1, value=0.25, step=0.05)
 
-
-code1='''from sklearn.model_selection import train_test_split #This package helps split data into training and testing data
+code1="test"
+#code1='''from sklearn.model_selection import train_test_split #This package helps split data into training and testing data
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size='''+str(testsplit)+''', random_state=42) #Creating train test split'''
 
