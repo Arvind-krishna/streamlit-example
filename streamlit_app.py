@@ -260,7 +260,7 @@ if st.button('Train Model'):
     model = create_model()
     model.fit(train_images, train_labels, epochs=num_epochs)
     st.write(f"Model trained for {num_epochs} epochs.")
-'''
+
 st.code(op,language='python')
 st.write('''Awesome, our detective has been trained. Now, let's test our detective to see how well it performs!''')
 
