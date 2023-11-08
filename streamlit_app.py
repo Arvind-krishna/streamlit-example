@@ -8,6 +8,9 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
+import torch 
+from torch import nn
+import torch.nn.functional as F
 
 
 st.title("Vizuara AI Labs")
