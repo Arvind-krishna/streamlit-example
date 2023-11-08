@@ -29,8 +29,8 @@ st.write('''Will be using the **MNIST** dataset to train our neural network''')
 mnist = fetch_openml('mnist_784', version=1, as_frame=False)
 mnist_df = pd.DataFrame(data=mnist.data, columns=mnist.feature_names)
 number = st.number_input("Enter a number (0-9)", min_value=0, max_value=9, value=0, step=1)
-# Display the first image of the number 9
-first_image_of_n = mnist_df[mnist_df['class'] == number].iloc[0, :-1].values.reshape(28, 28)
+n=str(number)
+first_image_of_n = mnist_df[mnist_df['class'] == n].iloc[0, :-1].values.reshape(28, 28)
 
 
 st.image(first_image_of_n, use_column_width=True)
