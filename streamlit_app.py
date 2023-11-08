@@ -168,45 +168,6 @@ code3='''class ClassifierModule(nn.Module):
         X = F.softmax(self.output(X), dim=-1)
         return X'''
 st.code(code3, language='python')
-#####################
-
-# Function to create a simple model
-def create_model():
-    model = tf.keras.models.Sequential([
-        tf.keras.layers.Flatten(input_shape=(28, 28)),
-        tf.keras.layers.Dense(128, activation='relu'),
-        tf.keras.layers.Dense(10, activation='softmax')
-    ])
-
-    model.compile(optimizer='adam',
-                  loss='sparse_categorical_crossentropy',
-                  metrics=['accuracy'])
-    return model
-
-
-
-# Input for the number of epochs
-num_epochs = st.number_input("Enter the number of epochs", min_value=1, value=5, step=1)
-
-# Load the MNIST dataset
-mnist = tf.keras.datasets.mnist
-(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
-
-# Normalize the pixel values
-train_images, test_images = train_images / 255.0, test_images / 255.0
-
-# Train the model based on user input
-if st.button('Train Model'):
-    model = create_model()
-    model.fit(train_images, train_labels, epochs=num_epochs)
-    st.write(f"Model trained for {num_epochs} epochs.")
-
-
-##################################
-
-
-
-
 
 
 st.write('''Does the above code confuse you? Don't know what's going on? 
@@ -253,37 +214,53 @@ st.subheader('''Step 3 : Building and training our detective ''')
 st.write('''next, we'll import NeuralNetClassifier from skorch, and create our detective. skorch allows to use PyTorch's networks in the SciKit-Learn setting''')
 st.code('''from skorch import NeuralNetClassifier''', language='python')
 st.write('''Now, let's build our detective,whom we shall be called "net"''')
-st.code('''net = NeuralNetClassifier(
+#####################
+
+# Function to create a simple model
+def create_model():
+    model = tf.keras.models.Sequential([
+        tf.keras.layers.Flatten(input_shape=(28, 28)),
+        tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.Dense(10, activation='softmax')
+    ])
+
+    model.compile(optimizer='adam',
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
+    return model
+
+
+
+# Input for the number of epochs
+num_epochs = st.number_input("Enter the number of epochs", min_value=1, value=5, step=1)
+
+# Load the MNIST dataset
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+# Normalize the pixel values
+train_images, test_images = train_images / 255.0, test_images / 255.0
+
+
+
+##################################
+st.code(f"""net = NeuralNetClassifier(
     ClassifierModule,
-    max_epochs=20,
+    max_epochs={num_epochs},
     lr=0.1,
     device=device,
-)''',language='python')
+)""",language='python')
 
-st.write('''Great! now our detective 'net' is ready for training. Since we've set max_epochs to 20, 'net' will train for a total of 20 cycles/epochs''') 
+st.write(f"Great! now our detective 'net' is ready for training. Since  max_epochs to {num_epochs}, 'net' will train for a total of {num_epochs} cycles/epochs") 
+
+
 st.code('''net.fit(X_train, y_train);''',language='python')
-op=''' epoch    train_loss    valid_acc    valid_loss     dur
--------  ------------  -----------  ------------  ------
-      1        0.8387       0.8800        0.4174  3.9125
-      2        0.4332       0.9103        0.3133  0.9897
-      3        0.3612       0.9233        0.2684  1.3494
-      4        0.3233       0.9309        0.2317  1.3793
-      5        0.2938       0.9353        0.2173  0.9992
-      6        0.2738       0.9390        0.2039  0.9964
-      7        0.2600       0.9454        0.1868  1.0119
-      8        0.2427       0.9484        0.1757  1.6899
-      9        0.2362       0.9503        0.1683  1.0590
-     10        0.2226       0.9512        0.1621  1.0045
-     11        0.2184       0.9529        0.1565  0.9868
-     12        0.2090       0.9541        0.1508  0.9842
-     13        0.2067       0.9570        0.1446  0.9813
-     14        0.1978       0.9570        0.1412  1.3288
-     15        0.1923       0.9582        0.1392  1.3540
-     16        0.1889       0.9582        0.1342  1.1838
-     17        0.1855       0.9612        0.1297  1.1465
-     18        0.1786       0.9613        0.1266  0.9851
-     19        0.1728       0.9615        0.1250  0.9879
-     20        0.1698       0.9613        0.1248  1.0151'''
+# Train the model based on user input
+if st.button('Train Model'):
+    model = create_model()
+    model.fit(train_images, train_labels, epochs=num_epochs)
+    st.write(f"Model trained for {num_epochs} epochs.")
+'''
 st.code(op,language='python')
 st.write('''Awesome, our detective has been trained. Now, let's test our detective to see how well it performs!''')
 
