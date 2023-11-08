@@ -23,7 +23,17 @@ st.subheader('''Step 1 : Gathering evidence''')
 
 st.write('''Before our detective (the neural network) can become really good at reading handwriting, it needs some high quality evidence/clues, and also some training, just like when you learn to ride a bicycle. ''')
 st.write('''In this chapter, we will be training our detective to analyse and detect handwritten numbers. Lets gather some data containing handwritten numbers, which could help us train our detective''')
+st.write('''Will be using the **MNIST** dataset to train our neural network''')
 
+
+mnist = fetch_openml('mnist_784', version=1, as_frame=False)
+mnist_df = pd.DataFrame(data=mnist.data, columns=mnist.feature_names)
+number = st.number_input("Enter a number (0-9)", min_value=0, max_value=9, value=0, step=1)
+# Display the first image of the number 9
+first_image_of_n = mnist_df[mnist_df['class'] == number].iloc[0, :-1].values.reshape(28, 28)
+
+
+st.image(first_image_of_n, use_column_width=True)
 
 code='''from sklearn.datasets import fetch_openml 
 mnist = fetch_openml('mnist_784', as_frame=False, cache=False) #Loads mnist dataset from sklearn'''
