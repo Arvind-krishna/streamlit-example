@@ -210,7 +210,7 @@ else:
     st.markdown(incorrect_message)
 
 
-st.subheader('''Step 3 : Building and training our detective ''')
+st.subheader('''Step 3 : Training and testing our detective ''')
 st.write('''next, we'll import NeuralNetClassifier from skorch, and create our detective. skorch allows to use PyTorch's networks in the SciKit-Learn setting''')
 st.code('''from skorch import NeuralNetClassifier''', language='python')
 st.write('''Now, let's build our detective,whom we shall be called "net"''')
@@ -260,29 +260,21 @@ if st.button('Train Model'):
     model = create_model()
     model.fit(train_images, train_labels, epochs=num_epochs)
     st.write(f"Hurray! our neural networks has been trained for {num_epochs} epochs.")
+    test_loss, test_acc = model.evaluate(test_images, test_labels)
+    st.code(f"Accuracy score: {test_acc}")
+    st.markdown(f"Wow, our neural network was able to predict with an accuracy of  {test_acc}! For a network with only one hidden layer, it is not too bad!")
 
 
-st.write('''Awesome, now that our detective has been trained. Now, let's test our detective to see how well it performs!''')
 
-st.subheader('''Step 4 : Testing our detective ''')
-st.write('''Let's import a package from sklearn that helps us calculate accuracy score''')
-st.code('''from sklearn.metrics import accuracy_score''',language='python')
-st.write('''now, let's have 'net' give us predictions for data from the test split''') 
-st.code('''y_pred = net.predict(X_test)''',language='python')
-st.write('''Ok, so now, 'net' has been tested. let's now evaluate and see its accuracy.''')
+st.subheader('''Step 4 : Refining our detective ''')
+st.write('''There are a lot of key factors that influences how a neural network performs, such as:''')
+st.write('''1. Amount of training data available
+2. The train-test split size
+3. The number of epochs 
+and so on.''')
 
-st.subheader('''Step 5 : Evaluating our detective ''')
-st.write('''Let's now calculate the accuracy of net's predictions vs the actual results''')
-st.code('''accuracy_score(y_test, y_pred)''',language='python')
+st.write(''' Feel free to experiment by trying out various combinations of the above, and observe the changes seen as a result.''')
 
-test_acc=''
-if st.button('Evaluate Model'):
-    if "model" in locals():
-        test_loss, test_acc = model.evaluate(test_images, test_labels)
-        st.code(f"{test_acc}")
-        st.markdown(f"Wow, our neural network was able to predict with an accuracy of  {test_acc}! For a network with only one hidden layer, it is not too bad!")
-    else:
-        st.markdown(f"Oops. the Model hasnt been trained yet. Please complete the 'training' phase before evaluating.")
     
 st.markdown('''**Congratulations! You have completed this Chapter on "Handwriting detection using a simple neural network!**''')
 st.markdown('''Need help? Please check out the FAQ section of this chapter. Your question may have been answered already.''')
