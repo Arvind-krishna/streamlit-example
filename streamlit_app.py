@@ -8,9 +8,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
-
 import os
-
 import cv2
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
