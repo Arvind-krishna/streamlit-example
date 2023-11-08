@@ -276,7 +276,7 @@ st.write('''Let's now calculate the accuracy of net's predictions vs the actual 
 st.code('''accuracy_score(y_test, y_pred)''',language='python')
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 st.code(f"{test_acc}")
-st.markdown(f"Wow, our neural network was able to predict with an accuracy of  {test_acc}! For a network with only one hidden layer, it is not too bad!''')
+st.markdown(f"Wow, our neural network was able to predict with an accuracy of  {test_acc}! For a network with only one hidden layer, it is not too bad!")
 
 
 st.markdown('''**Congratulations! You have completed this Chapter on "Handwriting detection using a simple neural network!**''')
