@@ -25,7 +25,7 @@ st.subheader('''Step 1 : Gathering evidence''')
 st.write('''Before our detective (the neural network) can become really good at reading handwriting, it needs some high quality evidence/clues, and also some training, just like when you learn to ride a bicycle. ''')
 st.write('''In this chapter, we will be training our detective to analyse and detect handwritten numbers. Lets gather some data containing handwritten numbers, which could help us train our detective''')
 st.write('''Will be using the **MNIST** dataset to train our neural network.''')
-st.write('''The MNIST dataset contains various samples of handwritten digits from 0-9. They are a total of 70,000 images in the dataset, and each has 784 dimensions
+st.write('''The MNIST dataset contains various samples of handwritten digits from 0-9. They are a total of 70,000 images in the dataset, and each has 784 dimensions''')
 st.write('''Think of each image as 28x28 grid (=784 total cells). Each cell represents a pixel, and it stores the intensity value for that particular pixel.''')
 st.write('''We will now load the MNIST dataset, andf also look at a few samples from the dataset.''')
 mnist = tf.keras.datasets.mnist
