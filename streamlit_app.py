@@ -38,7 +38,7 @@ mnist = fetch_openml('mnist_784', as_frame=False, cache=False) #Loads mnist data
 st.code(code, language='python')
 st.write('''Enter a number below, and click on "Show Image" to see a sample image of the selected number from the **MNIST** Dataset.''')
 
-number = st.number_input("Enter a number (0-9)", min_value=0, max_value=9, value=0, step=1)
+number = st.number_input(label="test","Enter a number (0-9)", min_value=0, max_value=9, value=0, step=1)
 
 if st.button('Show Image'):
     # Filter for the selected number
